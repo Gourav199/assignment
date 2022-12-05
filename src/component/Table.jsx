@@ -12,8 +12,6 @@ const Table = ({data: details}) => {
     const [data, setData] = useState([]);
     const { isQueryString, queryString } = queryStringJson();
     useEffect(() => {
-        
-        console.log(queryString)
         if (!isQueryString) {
           setData(details);
         }
