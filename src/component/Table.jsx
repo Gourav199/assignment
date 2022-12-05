@@ -7,6 +7,7 @@ import { useLocation } from 'react-router-dom';
 import {queryStringJson} from "./queryString";
 import moment from "moment"
 import Hoc from './hoc';
+import "./style.css";
 const Table = ({data: details}) => {
     const location = useLocation()
     const [data, setData] = useState([]);
@@ -60,7 +61,7 @@ const Table = ({data: details}) => {
         [details]
       );
     
-        return <div className='container-fluid'>
+        return <div className='container-fluid '>
             <SearchFilter  actionTypeOptions={getOptions("actionType")}
                             applicationTypeOptions={getOptions("applicationType")}/>
             <DataTable columns={Columns} data ={data}  pagination  highlightOnHover  />

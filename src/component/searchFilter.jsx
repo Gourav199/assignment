@@ -41,11 +41,12 @@ const SearchFilter = ({actionTypeOptions,applicationTypeOptions}) => {
         }
     }
     return (
-        <div className='container-fluid'>
+        <div className='container-fluid pt-3'>
             <div className='row'>
                 <div className='col-12'>
                     <div className='row'>
                         <div className='col-2'>
+                            <div className='ml-2'><h5 className='text-center'>Action Type</h5></div>
                             <select className="form-select" aria-label="Default select example" onChange={handleActionType} value={actionType}>
                             {actionTypeOptions?.map((name,index) =>
                                     
@@ -54,6 +55,7 @@ const SearchFilter = ({actionTypeOptions,applicationTypeOptions}) => {
                             </select>
                         </div> 
                         <div className='col-2'>
+                            <div className='ml-2'><h5 className='text-center'>Application Type</h5></div>
                             <select className='form-select' aria-label="Default select example" onChange={handleApplicationType} value={applicationType}>
                             {applicationTypeOptions?.map((name, index) =>
                                     (<option value={name} key={index}>{name}</option>)
@@ -61,20 +63,23 @@ const SearchFilter = ({actionTypeOptions,applicationTypeOptions}) => {
                             </select>
                         </div>
                         <div className='col-2'>
+                        <div className='ml-2'><h5 className='text-center'>From Date</h5></div>
                             <input type="Date" {...(queryString?.fromDate && {
           defaultValue: new Date(queryString?.fromDate).toISOString().slice(0, 10),
         })} className="form-control" onChange={handleFromDate} />
                         </div>
                         <div className='col-2'>
+                        <div className='ml-2'><h5 className='text-center'>TO Date</h5></div>
                             <input type="Date"{...(queryString?.toDate && {
           defaultValue: new Date(queryString?.toDate).toISOString().slice(0, 10),
         })} className="form-control" onChange={handleToDate}/>
                         </div>
                         <div className='col-2'>
+                        <div className='ml-2'><h5 className='text-center'>Application ID</h5></div>
                             <input type="type" value={applicationId} className="form-control"  onChange={handleApplicationId}/>
                         </div>
-                        <div className='col-2'>
-                            <button className='btn btn-primary' onClick={search}>Search Logger</button>
+                        <div className='col-2 pt-2'>
+                            <button className='btn btn-primary mt-4' onClick={search}>Search Logger</button>
                         </div>
                     </div>
                 </div>

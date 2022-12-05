@@ -4,7 +4,7 @@ export default function Header() {
   return (
     <div>
       <div className='container-fluid bg-primary'>
-        <p className='p-3'>Logger Search</p>
+        <h4 className='p-3 text-center'>Logger Search</h4>
       </div>
     </div>
   )
