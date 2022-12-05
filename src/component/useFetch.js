@@ -17,9 +17,7 @@ const UseFetch = () => {
     }
     getDetails()
     },[])
-    // useEffect(()=> {
-    //     setLoading(false) 
-    // },[details])
+    
     return (
         {details, loading}
     );

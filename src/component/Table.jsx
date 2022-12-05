@@ -1,10 +1,8 @@
 import React, { useCallback } from 'react';
-import axios from 'axios';
 import { useState, useEffect } from 'react';
 import DataTable from "react-data-table-component"
 import SearchFilter from './searchFilter';
 import Columns from './Columns';
-import UseFetch from './useFetch';
 import { useLocation } from 'react-router-dom';
 import {queryStringJson} from "./queryString";
 import moment from "moment"
