@@ -1,4 +1,4 @@
-import React from "react";
+
 import UseFetch from "./useFetch";
 
 const Hoc = (WrapperComponent) => {
