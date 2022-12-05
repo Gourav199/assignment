@@ -10,7 +10,6 @@ const SearchFilter = ({actionTypeOptions,applicationTypeOptions}) => {
     const [toDate, setToDate] = useState();
     const [applicationId, setApplicationId] = useState(queryString.applicationId);
     const navigate = useNavigate();
-    console.log('query', queryString)
     const handleActionType =(e) => {
         setActionType(e.target.value)
     }

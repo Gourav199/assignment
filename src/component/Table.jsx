@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import  { useCallback } from 'react';
 import { useState, useEffect } from 'react';
 import DataTable from "react-data-table-component"
 import SearchFilter from './searchFilter';
@@ -10,8 +10,9 @@ import Hoc from './hoc';
 const Table = ({data: details}) => {
     const location = useLocation()
     const [data, setData] = useState([]);
+    const { isQueryString, queryString } = queryStringJson();
     useEffect(() => {
-        const { isQueryString, queryString } = queryStringJson();
+        
         console.log(queryString)
         if (!isQueryString) {
           setData(details);
@@ -48,7 +49,7 @@ const Table = ({data: details}) => {
           }, []);
          setData(reducedArray);
         }
-      }, [location]);
+      }, [location, queryString]);
     const getOptions = useCallback(
         (key) => {
           return  details && Object.keys(
