@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { queryStringJson } from './queryString';
 
 const SearchFilter = ({actionTypeOptions,applicationTypeOptions}) => {
-    const { isQueryString, queryString } = queryStringJson();
+    const { queryString } = queryStringJson();
     const [actionType, setActionType] = useState(queryString.actionType);
     const [applicationType, setApplicationType] = useState(queryString.applicationType);
     const [fromDate, setFromDate] = useState();
