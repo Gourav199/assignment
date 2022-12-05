@@ -47,7 +47,7 @@ const Table = ({data: details}) => {
           }, []);
          setData(reducedArray);
         }
-      }, [location, queryString]);
+      }, [location, queryString, details]);
     const getOptions = useCallback(
         (key) => {
           return  details && Object.keys(
