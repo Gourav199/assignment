@@ -44,15 +44,14 @@ const SearchFilter = ({actionTypeOptions,applicationTypeOptions}) => {
         }
     }
     useEffect(()=>{
-        function reset () {
-            setActionType(queryString.actionType || '')
+        
+        setActionType(queryString.actionType || '')
         setApplicationType(queryString.applicationType || '')
         setFromDate(queryString.fromDate || '')
         setToDate(queryString.toDate || '')
         setApplicationId(queryString.applicationId || '')
-        }
-        reset()
-    },[location])
+       
+    },[location,queryString])
 
     
     return (
