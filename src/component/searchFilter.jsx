@@ -51,7 +51,7 @@ const SearchFilter = ({actionTypeOptions,applicationTypeOptions}) => {
         setToDate(queryString.toDate || '')
         setApplicationId(queryString.applicationId || '')
        
-    },[location,queryString])
+    },[location])
 
     
     return (
