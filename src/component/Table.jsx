@@ -1,6 +1,7 @@
 import  { useCallback } from 'react';
 import { useState, useEffect } from 'react';
 import DataTable from "react-data-table-component"
+import { useTable, useSortBy } from "react-table"
 import SearchFilter from './searchFilter';
 import Columns from './Columns';
 import { useLocation } from 'react-router-dom';
@@ -8,10 +9,18 @@ import {queryStringJson} from "./queryString";
 import moment from "moment"
 import Hoc from './hoc';
 import "./style.css";
+import { useMemo } from 'react';
+import { FaSortUp, FaSortDown, FaSort } from "react-icons/fa";
+
 const Table = ({data: details}) => {
     const location = useLocation()
     const [data, setData] = useState([]);
     const { isQueryString, queryString } = queryStringJson();
+    const columns  = useMemo(()=> Columns,[])
+    const {getTableProps, getTableBodyProps,headerGroups,rows, prepareRow} = useTable({
+      columns:columns,
+      data:data,
+    }, useSortBy)
     useEffect(() => {
         if (!isQueryString) {
           setData(details);
@@ -41,7 +50,7 @@ const Table = ({data: details}) => {
               );
             }
             let flag = Object.keys(rest).every(
-              (key) => `${rest[key]}` === `${curr[key]}`
+              (key) => `${curr[key]}`.toLowerCase().indexOf(`${rest[key]}`.toLowerCase())  >-1
             );
             flag1 && flag && acc.push(curr);
             return acc;
@@ -64,7 +73,35 @@ const Table = ({data: details}) => {
         return <div className='container-fluid '>
             <SearchFilter  actionTypeOptions={getOptions("actionType")}
                             applicationTypeOptions={getOptions("applicationType")}/>
-            <DataTable columns={Columns} data ={data}  pagination  highlightOnHover  />
+            {/* <DataTable columns={Columns} data ={data}  pagination  highlightOnHover  />  */}
+            <table {...getTableProps} className='table'>
+              <thead>
+                {headerGroups.map((headerGroup)=> (
+                  <tr{...headerGroup.getHeaderGroupProps}>
+                    {headerGroup.headers.map((column) => (
+                      <th {...column.getHeaderProps(column.getSortByToggleProps())} scope="col">
+                        {column.render('Header')}
+                        {column.isSorted ? (column.isSortedDesc? <FaSortDown /> : <FaSortUp />): ''}</th>
+                    ))}
+                  </tr>
+                ))}
+              </thead>
+              <tbody {...getTableBodyProps()}>
+                {rows.map((row,i) => {
+                  prepareRow(row)
+                  return (
+                    <tr {...row.getRowProps()}>
+                      {row.cells.map((cell)=> (
+                        <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
+                      ))}
+                    </tr>
+                  )
+                })}
+                <tr>
+                  <td> </td>
+                </tr>
+              </tbody>
+            </table>
         </div>
    
 }

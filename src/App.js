@@ -1,6 +1,5 @@
 import Header from './component/Header';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 import Table from './component/Table';
 
 
