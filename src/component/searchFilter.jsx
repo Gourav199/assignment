@@ -45,12 +45,12 @@ const SearchFilter = ({actionTypeOptions,applicationTypeOptions}) => {
     }
     useEffect(()=>{
         setActionType(queryString.actionType || '')
-        // setApplicationType(queryString.applicationType || '')
-        // setFromDate(queryString.fromDate || '')
-        // setToDate(queryString.toDate || '')
-        // setApplicationId(queryString.applicationId || '')
+        setApplicationType(queryString.applicationType || '')
+        setFromDate(queryString.fromDate || '')
+        setToDate(queryString.toDate || '')
+        setApplicationId(queryString.applicationId || '')
        
-    },[location,queryString.actionType])
+    },[location,queryString.actionType,queryString.applicationType,queryString.fromDate,queryString.toDate,queryString.applicationId])
 
     
     return (
