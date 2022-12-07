@@ -45,10 +45,10 @@ const SearchFilter = ({actionTypeOptions,applicationTypeOptions}) => {
     }
     useEffect(()=>{
         setActionType(queryString.actionType || '')
-        setApplicationType(queryString.applicationType || '')
-        setFromDate(queryString.fromDate || '')
-        setToDate(queryString.toDate || '')
-        setApplicationId(queryString.applicationId || '')
+        // setApplicationType(queryString.applicationType || '')
+        // setFromDate(queryString.fromDate || '')
+        // setToDate(queryString.toDate || '')
+        // setApplicationId(queryString.applicationId || '')
        
     },[location])
 
