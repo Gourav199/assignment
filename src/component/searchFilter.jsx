@@ -44,7 +44,6 @@ const SearchFilter = ({actionTypeOptions,applicationTypeOptions}) => {
         }
     }
     useEffect(()=>{
-        
         setActionType(queryString.actionType || '')
         setApplicationType(queryString.applicationType || '')
         setFromDate(queryString.fromDate || '')
