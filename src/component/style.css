@@ -1,24 +1,3 @@
-[data-column-id="logID"] {
-    padding-top: 5px;
-    font-size: 15px;
-  }
-  [data-column-id="applicationType"] {
-    padding-top: 5px;
-    font-size: 15px;
-  }
-  [data-column-id="applicationId"] {
-    padding-top: 5px;
-    font-size: 15px;
-  }
-  [data-column-id="action"] {
-    padding-top: 5px;
-    font-size: 15px;
-  }
-  [data-column-id="DateTIme"] {
-    padding-top: 5px;
-    font-size: 15px;
-  }
-  select option[disabled] {
-    display: none;
+.pagination {
+  display: flex;
 }
-  
