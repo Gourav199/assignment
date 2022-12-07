@@ -5,7 +5,7 @@ import "./style.css";
 import { useForm } from "react-hook-form";
 
 const SearchFilter = ({actionTypeOptions,applicationTypeOptions}) => {
-    const { isQueryString,queryString } = queryStringJson();
+    const { queryString } = queryStringJson();
     const [actionType, setActionType] = useState(queryString.actionType);
     const [applicationType, setApplicationType] = useState(queryString.applicationType);
     const [fromDate, setFromDate] = useState();
@@ -13,7 +13,7 @@ const SearchFilter = ({actionTypeOptions,applicationTypeOptions}) => {
     const [applicationId, setApplicationId] = useState(queryString.applicationId);
     const navigate = useNavigate();
     const location = useLocation();
-    const { handleSubmit, register, reset } = useForm();
+    const { register } = useForm();
     const handleActionType =(e) => {
         setActionType(e.target.value)
     }
@@ -49,7 +49,7 @@ const SearchFilter = ({actionTypeOptions,applicationTypeOptions}) => {
         setFromDate(queryString.fromDate || '')
         setToDate(queryString.toDate || '')
         setApplicationId(queryString.applicationId || '')
-    },[location])
+    },[location,actionType,applicationType,fromDate,toDate,applicationId])
 
     
     return (

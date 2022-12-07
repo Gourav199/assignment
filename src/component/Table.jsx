@@ -1,6 +1,5 @@
 import  { useCallback } from 'react';
 import { useState, useEffect } from 'react';
-import DataTable from "react-data-table-component"
 import { useTable, useSortBy } from "react-table"
 import SearchFilter from './searchFilter';
 import Columns from './Columns';
@@ -10,7 +9,7 @@ import moment from "moment"
 import Hoc from './hoc';
 import "./style.css";
 import { useMemo } from 'react';
-import { FaSortUp, FaSortDown, FaSort } from "react-icons/fa";
+import { FaSortUp, FaSortDown } from "react-icons/fa";
 
 const Table = ({data: details}) => {
     const location = useLocation()
