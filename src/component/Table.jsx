@@ -100,13 +100,13 @@ const Table = ({ data: details }) => {
       />
       {/* <DataTable columns={Columns} data ={data}  pagination  highlightOnHover  />  */}
       <table {...getTableProps} className="table">
-        <thead className="hello">
+        <thead className="tb-header">
           {headerGroups.map((headerGroup) => (
             <tr {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map((column) => (
-                <th  className="hello"{...column.getHeaderProps(column.getSortByToggleProps())}>
+                <th  className="tb-header"{...column.getHeaderProps(column.getSortByToggleProps())}>
                    <div
-                className="flex  justify-between demo"
+                className="flex  justify-between th-width"
                 title={
                   column.isSorted
                     ? column.isSortedDesc
@@ -121,12 +121,12 @@ const Table = ({ data: details }) => {
                 <span className="">
                   {column.isSorted ? (
                     column.isSortedDesc ? (
-                      <FaSortDown  className="hello"/>
+                      <FaSortDown  className="tb-header"/>
                     ) : (
-                      <FaSortUp className="hello"/>
+                      <FaSortUp className="tb-header"/>
                     )
                   ) : (
-                    <FaSort className="hello"/>
+                    <FaSort className="tb-header"/>
                   )}
                 </span>
               </div>

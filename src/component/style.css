@@ -1,9 +1,9 @@
 .pagination {
   display: flex;
 }
-.demo {
+.th-width {
   width: 150px;
 }
-.hello {
+.tb-header {
   margin-top: 10px;
 }
