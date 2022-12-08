@@ -100,13 +100,13 @@ const Table = ({ data: details }) => {
       />
       {/* <DataTable columns={Columns} data ={data}  pagination  highlightOnHover  />  */}
       <table {...getTableProps} className="table">
-        <thead>
+        <thead className="hello">
           {headerGroups.map((headerGroup) => (
             <tr {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map((column) => (
-                <th {...column.getHeaderProps(column.getSortByToggleProps())}>
+                <th  className="hello"{...column.getHeaderProps(column.getSortByToggleProps())}>
                    <div
-                className="w-full flex items-center justify-between"
+                className="flex  justify-between demo"
                 title={
                   column.isSorted
                     ? column.isSortedDesc
@@ -115,18 +115,18 @@ const Table = ({ data: details }) => {
                     : "Sort"
                 }
               >
-                <p className="flex-1 text-sm text-left truncate">
+                <p>
                   {column.render("Header")}
                 </p>
-                <span className="w-fit">
+                <span className="">
                   {column.isSorted ? (
                     column.isSortedDesc ? (
-                      <FaSortDown />
+                      <FaSortDown  className="hello"/>
                     ) : (
-                      <FaSortUp />
+                      <FaSortUp className="hello"/>
                     )
                   ) : (
-                    <FaSort />
+                    <FaSort className="hello"/>
                   )}
                 </span>
               </div>
@@ -139,7 +139,7 @@ const Table = ({ data: details }) => {
           {page.length === 0 ? (
             <tr>
               <td
-                colSpan={10}
+                colSpan={5}
                 className="h-[200px] text-center text-2xl opacity-50"
               >
                 No Data

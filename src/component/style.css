@@ -1,3 +1,9 @@
 .pagination {
   display: flex;
 }
+.demo {
+  width: 150px;
+}
+.hello {
+  margin-top: 10px;
+}
