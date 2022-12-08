@@ -1,5 +1,5 @@
 # Deploy Link
-https://splendid-granita-5b31cc.netlify.app/
+https://strong-pika-ee749e.netlify.app/
 ## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
