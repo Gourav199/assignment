@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { queryStringJson } from "./queryString";
 import "./style.css";
-import { useForm } from "react-hook-form";
 
 const SearchFilter = ({ actionTypeOptions, applicationTypeOptions }) => {
   const { queryString } = queryStringJson();
@@ -68,7 +67,7 @@ const SearchFilter = ({ actionTypeOptions, applicationTypeOptions }) => {
     queryString.applicationType,
     queryString.fromDate,
     queryString.toDate,
-    queryString.applicationId,
+    queryString.applicationId
   ]);
 
   return (

@@ -20,7 +20,6 @@ const Table = ({ data: details }) => {
     getTableProps,
     getTableBodyProps,
     headerGroups,
-    rows,
     prepareRow,
     state,
     pageCount,
@@ -76,7 +75,7 @@ const Table = ({ data: details }) => {
       }, []);
       setData(reducedArray);
     }
-  }, [location]);
+  }, [location,details,isQueryString,queryString]);
   const getOptions = useCallback(
     (key) => {
       return (
