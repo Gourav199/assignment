@@ -12,6 +12,7 @@ const SearchFilter = ({ actionTypeOptions, applicationTypeOptions }) => {
   const [applicationId, setApplicationId] = useState("");
   const navigate = useNavigate();
   const location = useLocation();
+  applicationTypeOptions.shift() 
   const handleActionType = (e) => {
     setActionType(e.target.value);
   };
