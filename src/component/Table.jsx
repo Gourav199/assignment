@@ -97,7 +97,6 @@ const Table = ({ data: details }) => {
         actionTypeOptions={getOptions("actionType")}
         applicationTypeOptions={getOptions("applicationType")}
       />
-      {/* <DataTable columns={Columns} data ={data}  pagination  highlightOnHover  />  */}
       <table {...getTableProps} className="table">
         <thead className="tb-header">
           {headerGroups.map((headerGroup) => (
