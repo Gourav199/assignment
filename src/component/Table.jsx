@@ -14,7 +14,7 @@ import Pagination from "./Pagination";
 const Table = ({ data: details }) => {
   const location = useLocation();
   const [data, setData] = useState(details);
-  const { isQueryString, queryString } = queryStringJson();
+ 
   const columns = useMemo(() => Columns, []);
   const {
     getTableProps,
@@ -41,7 +41,8 @@ const Table = ({ data: details }) => {
     // if (!isQueryString) {
     //   setData(details);
     // }
-    if (isQueryString) {
+    const { isQueryString, queryString } = queryStringJson();
+    if (isQueryString && details ) {
       let reducedArray = details?.reduce((acc, curr) => {
         const { fromDate, toDate, ...rest } = queryString;
         let flag1 = true;
