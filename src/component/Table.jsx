@@ -76,7 +76,7 @@ const Table = ({ data: details }) => {
       }, []);
       setData(reducedArray);
     }
-  }, [location]);
+  }, [location,details]);
   const getOptions = useCallback(
     (key) => {
       return (
