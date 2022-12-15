@@ -13,7 +13,7 @@ import { FaSortUp, FaSortDown, FaSort } from "react-icons/fa";
 import Pagination from "./Pagination";
 const Table = ({ data: details }) => {
   const location = useLocation();
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(details);
   const { isQueryString, queryString } = queryStringJson();
   const columns = useMemo(() => Columns, []);
   const {
@@ -38,9 +38,9 @@ const Table = ({ data: details }) => {
     useFlexLayout
   );
   useEffect(() => {
-    if (!isQueryString) {
-      setData(details);
-    }
+    // if (!isQueryString) {
+    //   setData(details);
+    // }
     if (isQueryString) {
       let reducedArray = details?.reduce((acc, curr) => {
         const { fromDate, toDate, ...rest } = queryString;
