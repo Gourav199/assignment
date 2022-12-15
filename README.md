@@ -1,5 +1,5 @@
 # Deploy Link
-https://strong-pika-ee749e.netlify.app/
+https://fantastic-trifle-15bc1b.netlify.app
 ## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
