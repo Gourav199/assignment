@@ -12,7 +12,7 @@ const SearchFilter = ({ actionTypeOptions, applicationTypeOptions }) => {
   const [applicationId, setApplicationId] = useState("");
   const navigate = useNavigate();
   const location = useLocation();
-  applicationTypeOptions.shift() 
+  applicationTypeOptions?.shift();
   const handleActionType = (e) => {
     setActionType(e.target.value);
   };
@@ -82,6 +82,7 @@ const SearchFilter = ({ actionTypeOptions, applicationTypeOptions }) => {
                   <h5 className="text-center">Action Type</h5>
                 </div>
                 <select
+                  placeholder="select action type"
                   className="form-select"
                   aria-label="Default select example"
                   onChange={handleActionType}
@@ -105,6 +106,7 @@ const SearchFilter = ({ actionTypeOptions, applicationTypeOptions }) => {
                   <h5 className="text-center">Application Type</h5>
                 </div>
                 <select
+                  placeholder="select application type"
                   className="form-select"
                   aria-label="Default select example"
                   onChange={handleApplicationType}
@@ -132,6 +134,7 @@ const SearchFilter = ({ actionTypeOptions, applicationTypeOptions }) => {
                   value={fromDate}
                   className="form-control"
                   onChange={handleFromDate}
+                  data-testid='startdate'
                 />
               </div>
               <div className="col-2">
@@ -143,6 +146,7 @@ const SearchFilter = ({ actionTypeOptions, applicationTypeOptions }) => {
                   value={toDate}
                   className="form-control"
                   onChange={handleToDate}
+                  data-testid='fromdate'
                 />
               </div>
               <div className="col-2">
