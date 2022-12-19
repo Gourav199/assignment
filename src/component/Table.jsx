@@ -9,7 +9,7 @@ import moment from "moment";
 import Hoc from "./hoc";
 import "./style.css";
 import { useMemo } from "react";
-import { FaSortUp, FaSortDown, FaSort } from "react-icons/fa";
+import { FaSortUp, FaSortDown } from "react-icons/fa";
 import Pagination from "./Pagination";
 const Table = ({ data: details }) => {
   const location = useLocation();
