@@ -38,11 +38,12 @@ const Table = ({ data: details }) => {
     useFlexLayout
   );
   useEffect(() => {
-    // if (!isQueryString) {
-    //   setData(details);
-    // }
     const { isQueryString, queryString } = queryStringJson();
-    if (isQueryString && details ) {
+    if (!isQueryString) {
+      setData(details);
+    }
+   
+    if (isQueryString) {
       let reducedArray = details?.reduce((acc, curr) => {
         const { fromDate, toDate, ...rest } = queryString;
         let flag1 = true;
@@ -111,7 +112,7 @@ const Table = ({ data: details }) => {
                     ? column.isSortedDesc
                       ? "Desc"
                       : "Asc"
-                    : "Sort"
+                    : "Asc"
                 }
               >
                 <p>
@@ -125,7 +126,7 @@ const Table = ({ data: details }) => {
                       <FaSortUp className="tb-header"/>
                     )
                   ) : (
-                    <FaSort className="tb-header"/>
+                    <FaSortUp className="tb-header"/>
                   )}
                 </span>
               </div>
